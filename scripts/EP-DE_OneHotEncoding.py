@@ -2,9 +2,10 @@ import numpy as np
 
 #file1 contains the n [200] sequences provided for the tests
 #last 4 characters contains the 4 positions 
-file1 = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\renamingConventionforFolders.txt"
-file2 = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\DE_EP_onehot.txt"
-file3 = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\DE_EP_onehot.npy" 
+file1 = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\github Upload\testingData\sequenceVariation\renamingConventionforFolders.txt"
+
+file2 = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\reducedDim\reducedDimOneHot.npy"
+#file3 = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\reducedDim\reducedDimOneHot.txt"
 #all possible amino acids [0-19 index]
 possible_amino_acid = ['A','R','N','D','C','Q','E','G','H','I','L','K',
                              			'M','F','P','S','T','W','Y','V']
@@ -37,13 +38,7 @@ def generate_onehot():
 
 	return onehot_array
 #reduces 3d to 2d 
-def TwoDeeReduction(x):
-	# if len(x.shape) !=3:
-	# 	raise ValueError("Input must be 3D Array")
-	flat_length = np.prod(x.shape[1:])
-	return np.reshape(x,[len(x),flat_length])
 
-twoDeeArray = TwoDeeReduction(generate_onehot())
 
-np.save(file2, twoDeeArray)
-np.savetxt(file2, twoDeeArray.astype(int), fmt='%i', delimiter=" ")
+np.save(file2, generate_onehot())
+#np.savetxt(file2, generate_onehot(comboList), fmt = '%.18f', delimiter=",")

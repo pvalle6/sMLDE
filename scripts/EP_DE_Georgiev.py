@@ -29,9 +29,11 @@ GEORGIEV_PARAMETERS = [gg_1, gg_2, gg_3, gg_4, gg_5, gg_6, gg_7, gg_8, gg_9,
 
 #file1 contains the n [200] sequences provided for the tests
 #last 4 characters contains the 4 positions 
-file1 = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\renamingConventionforFolders.txt"
-file2 = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\DE_EP_georgiev.txt"
-file3 = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\georgiev SAVE.txt"
+file1 = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\github Upload\testingData\sequenceVariation\renamingConventionforFolders.txt"
+
+#file2 = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\DE_EP_georgiev.txt"
+#file3 = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\georgiev SAVE.txt"
+file3 = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\200_Georgiev"
 #all possible amino acids [0-19 index]
 
 possible_amino_acid = ['A','R','N','D','C','Q','E','G','H','I','L','K',
@@ -62,5 +64,5 @@ def TwoDeeReduction(x):
 
 georgievArray = TwoDeeReduction(generate_Georgiev())
 
-np.savetxt(file2, georgievArray, fmt='%i')
+#np.savetxt(file2, georgievArray)
 np.save(file3, georgievArray)
