@@ -29,9 +29,8 @@ GEORGIEV_PARAMETERS = [gg_1, gg_2, gg_3, gg_4, gg_5, gg_6, gg_7, gg_8, gg_9,
 
 #file1 contains the n [200] sequences provided for the tests
 #last 4 characters contains the 4 positions 
-file1 = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\github Upload\testingData\sequenceVariation\renamingConventionforFolders.txt"
-
-file3 = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\200_Georgiev"
+input_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\Data\200_ID_Variant.txt"
+output_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\Data\200_Georgiev.npy"
 #all possible amino acids [0-19 index]
 
 possible_amino_acid = ['A','R','N','D','C','Q','E','G','H','I','L','K',
@@ -39,7 +38,7 @@ possible_amino_acid = ['A','R','N','D','C','Q','E','G','H','I','L','K',
 #reads file into list and cuts white space
 comboListGen = []
 comboList = []
-with open(file1) as file:
+with open(input_file) as file:
 	comboListGen = file.readlines()
 	comboListGen = (x.rstrip() for x in comboListGen)
 #takes only the last 4, which are the encoding from the file 
@@ -56,6 +55,4 @@ def generate_Georgiev():
 	return unnorm_encodings
 
 georgievArray = generate_Georgiev()
-
-#np.savetxt(file2, georgievArray)
-np.save(file3, georgievArray)
+np.save(output_file, georgievArray)

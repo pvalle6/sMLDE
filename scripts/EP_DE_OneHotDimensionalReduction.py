@@ -7,14 +7,15 @@ from sklearn.decomposition import PCA
 
 #prevents sciNot from being used as output
 np.set_printoptions(suppress=True)
-
+input_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\Data\200OneHot.npy"
+output_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\Data\200onehotreduced.csv"
 #set these to: your 3d array numpy encoding; your location for a binaryOutput in numpy (optional), and your location for a raw Text OneHot output
 #input numpy unnormalized array with the onehot encodings
 #HighDimensionalOneHotFile = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\georgiev_Save.npy"
 #HighDimensionalOneHotFile = R
 #loads in the array from the 3d binary numpy
 #HighDimArray = np.load(R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\reducedDim\200_Georgiev.npy")
-HighDimArray = np.load(R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\reducedDim\reducedDimOneHot.npy")
+HighDimArray = np.load(input_file)
 
 #output files of binary data 
 
@@ -32,4 +33,4 @@ reducedArray = TwoDeeReduction(HighDimArray)
 pca = PCA(n_components = 3)
 
 printed_out_georgiev = pca.fit_transform(reducedArray)
-np.savetxt(R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\reducedDim\200onehotreduced.csv", printed_out_georgiev, fmt = '%.18f', delimiter =',')
+np.savetxt(output_file, printed_out_georgiev, fmt = '%.18f', delimiter =',')
