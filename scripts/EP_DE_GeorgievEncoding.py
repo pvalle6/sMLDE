@@ -31,8 +31,6 @@ GEORGIEV_PARAMETERS = [gg_1, gg_2, gg_3, gg_4, gg_5, gg_6, gg_7, gg_8, gg_9,
 #last 4 characters contains the 4 positions 
 file1 = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\github Upload\testingData\sequenceVariation\renamingConventionforFolders.txt"
 
-#file2 = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\DE_EP_georgiev.txt"
-#file3 = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\georgiev SAVE.txt"
 file3 = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\200_Georgiev"
 #all possible amino acids [0-19 index]
 
@@ -56,13 +54,8 @@ def generate_Georgiev():
 		unnorm_encodings[i] = [[georgiev_param[character] for georgiev_param 
 										in GEORGIEV_PARAMETERS] for character in combo]
 	return unnorm_encodings
-def TwoDeeReduction(x):
-	# if len(x.shape) !=3:
-	# 	raise ValueError("Input must be 3D Array")
-	flat_length = np.prod(x.shape[1:])
-	return np.reshape(x,[len(x),flat_length])
 
-georgievArray = TwoDeeReduction(generate_Georgiev())
+georgievArray = generate_Georgiev()
 
 #np.savetxt(file2, georgievArray)
 np.save(file3, georgievArray)

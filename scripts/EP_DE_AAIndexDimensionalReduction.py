@@ -32,4 +32,7 @@ reducedArray = TwoDeeReduction(HighDimArray)
 pca = PCA(n_components = 3)
 
 printed_out_georgiev = pca.fit_transform(reducedArray)
-np.savetxt(R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\reducedDim\200georgiev.csv", printed_out_georgiev, fmt = '%.18f', delimiter =',')
+pca.fit(reducedArray)
+print(pca.explained_variance_)
+print(printed_out_georgiev)
+#np.savetxt(R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\reducedDim\200georgiev.csv", printed_out_georgiev, fmt = '%.18f', delimiter =',')
