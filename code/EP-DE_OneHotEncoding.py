@@ -2,8 +2,8 @@ import numpy as np
 
 #file1 contains the n [200] sequences provided for the tests
 #last 4 characters contains the 4 positions 
-input_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\Data\200_ID_Variant.txt"
-outputNumpy = R"C:\Users\valle\OneDrive\Documents\EP-DE\Data\200OneHot.npy"
+input_file = R"data\200_ID_Variant.txt"
+outputNumpy = R"data\200OneHot.npy"
 
 #all possible amino acids [0-19 index]
 possible_amino_acid = ['A','R','N','D','C','Q','E','G','H','I','L','K',

@@ -7,8 +7,8 @@ from sklearn.decomposition import PCA
 
 #prevents sciNot from being used as output
 np.set_printoptions(suppress=True)
-input_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\Data\200_Georgiev.npy"
-output_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\Data\AAindexReducedPCA.txt"
+input_file = R"data\200_Georgiev.npy"
+output_file = R"data\AAindexReducedPCA.txt"
 #set these to: your 3d array numpy encoding; your location for a binaryOutput in numpy (optional), and your location for a raw Text OneHot output
 #input numpy unnormalized array with the onehot encodings
 #HighDimensionalOneHotFile = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\georgiev_Save.npy"
