@@ -1,0 +1,34 @@
+#!/bin/bash 
+#PBS -l nodes=1:ppn=20
+#PBS -l walltime=1:00:00:00
+#PBS -N flex_1
+#PBS -o flex.o
+#PBS -e flex.e 
+#PBS -q workq
+#PBS -A hpc_mlde_gb1
+#PBS -m e
+#PBS -M kngu177@lsu.edu
+
+# Variables
+export flexpepdock=/project/jjung1/packages/rosetta/main/source/bin/FlexPepDocking.default.linuxgccrelease
+        # Path to FlexPepDocking
+export ipath=Prepacked_protein_peptide_complex
+        # Path to folder that contains all input .pdb files  (Default: input)
+export opath=FlexPepDock_output
+        # Path to folder that put all output files  (Default: output)
+
+# Load GNU Parallel
+module load gnuparallel/20190222/intel-19.0.5
+
+# Change work directory
+cd $PBS_O_WORKDIR
+
+# Create output folders based on input file list
+export ifiles=`ls $ipath`
+for ifile in $ifiles
+do
+    mkdir $opath/$ifile
+done
+
+# Run
+parallel $flexpepdock @flags -in:path $ipath/ -out:prefix $opath/{/}/ -scorefile $opath/{/}/{/.}.score.sc -s {} ::: $ifiles

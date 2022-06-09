@@ -1,0 +1,10 @@
+#-pep_refine
+#-flexpep_score_only
+-flexpep_prepack
+-out:nstruct 1 
+-ignore_unrecognized_res
+-ex1
+-ex2aro
+-mute core.io.database
+-mute core.util.prof
+

@@ -1,0 +1,37 @@
+#!/bin/bash 
+#PBS -l nodes=1:ppn=20
+#PBS -l walltime=0:10:00
+#PBS -N PreProcess
+#PBS -o PreProcess.o
+#PBS -e PreProcess.e 
+#PBS -q workq
+#PBS -A hpc_mlde_gb1
+
+# Define variables
+ipath=GB1_sequences
+        # Path to folder that contains all results from AlphaFold (Default: input)
+opath=Protein_peptide_complex
+        # Path to folder that put all output files  (Default: output)
+ppn=20
+        # Number of processes per node  (Default: 20)
+        
+# Activate pymol environment
+module load python/3.8.5-anaconda
+source activate pymol
+
+# Load GNU Parallel
+module load gnuparallel/20190222/intel-19.0.5
+
+# Change work directory
+cd $PBS_O_WORKDIR
+
+# Create a list of input files
+ifiles=(`cd $ipath; find . -name 'ranked_0.pdb' | sed -e 's|^./||g' -e  's|/ranked_0.pdb||g'`)
+
+# Process AlphaFold results
+parallel --workdir $PBS_O_WORKDIR -j$ppn \
+         "sed -e 's|INPUT|$ipath/{}/ranked_0.pdb|g' -e 's|OUTPUT|$opath/{}.pdb|g' script.pml | pymol -cpq" ::: ${ifiles[@]}
+         
+# Deactivate pymol environment
+conda deactivate
+
