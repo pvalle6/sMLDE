@@ -1,0 +1,13 @@
+#!/bin/bash 
+#PBS -l nodes=1:ppn=20
+#PBS -l walltime=0:10:00
+#PBS -N testingRos_1
+#PBS -o testingRos.o
+#PBS -e testingRos.e 
+#PBS -q workq
+#PBS -A hpc_mlde_gb1
+
+#rosetta paths 
+export $ROSETTA3=/ddnA/project/jjung1/packages/rosetta/main/source/
+export $ROSETTA3_DB=/ddnA/project/jjung1/packages/rosetta/main/database
+export $ROSETTA_TOOLS=/ddnA/project/jjung1/packages/rosetta/main/tools
