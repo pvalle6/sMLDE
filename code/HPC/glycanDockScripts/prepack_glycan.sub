@@ -31,5 +31,6 @@ export ifiles=`ls $ipath`
 #done
 
 # Run
-parallel $flexpepdock @prepack_flags -in:path $ipath/ -out:prefix $opath/ -scorefile $opath/{/.}.score.sc -s {} ::: $ifiles
+parallel $flexpepdock @prepack_flags_glycan -in:path $ipath/ -out:prefix $opath/ -scorefile $opath/{/.}.score.sc -s {} ::: $ifiles
 #parallel $flexpepdock @prepack_flags -in:path $ipath/ -out:prefix $opath/{/}/ -scorefile $opath/{/}/{/.}.score.sc -s {} ::: $ifiles
+
