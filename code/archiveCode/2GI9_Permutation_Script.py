@@ -3,15 +3,17 @@
 
 #wild type variation
 #
-
+input = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\test\160CorrectedSequences.txt"
 #first constant
-#TYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNG
+#MQYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNG
+firstConstant = 'MQYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNG'
 
 #second constant
 #EWTYDDATKTFT
-
+secondConstant = 'EWTYDDATKTFT'
 #third constant
 #TE
+thirdConstant = 'TE'
 
 #protein with permutations
 #TYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNxxxGEWTYDDATKTFTxTE
@@ -21,7 +23,7 @@ amino_acid = ['A','R','N','D','C','Q','E','G','H','I','L','K',
 
 #constants to build sequences with after permeations 
 
-f = open("variationPerm.txt","a")
+f = open(input,"a")
 
 for index1 in (range(len(amino_acid))):
     first_mutation = (amino_acid[index1])
@@ -33,7 +35,7 @@ for index1 in (range(len(amino_acid))):
                 fourth_mutation = amino_acid[index4]
                 #outputs the current perm
                 #f.write(first_constant + first_mutation + second_mutation + third_mutation + second_constant + fourth_mutation + third_constant + "\n")
-                f.write(first_mutation + second_mutation + third_mutation + fourth_mutation + "\n")
+                f.write(firstConstant + first_mutation + second_mutation + third_mutation + secondConstant + fourth_mutation + thirdConstant + "\n")
 
 f.close()
                 
