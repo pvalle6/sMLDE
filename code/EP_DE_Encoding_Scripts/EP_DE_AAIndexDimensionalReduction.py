@@ -8,7 +8,7 @@ from sklearn.decomposition import PCA
 #prevents sciNot from being used as output
 np.set_printoptions(suppress=True)
 input_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\200GeorgievEncoding.npy"
-output_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\test\reducedHighStandardGeorgiev.csv"
+output_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\test\nonStandardGeorgiev.csv"
 #set these to: your 3d array numpy encoding; your location for a binaryOutput in numpy (optional), and your location for a raw Text OneHot output
 #input numpy unnormalized array with the onehot encodings
 #HighDimensionalOneHotFile = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\georgiev_Save.npy"
@@ -32,8 +32,8 @@ def TwoDeeReduction(x):
 flatArray = TwoDeeReduction(HighDimArray)
 # normalization
 
-scaler = StandardScaler()
-standardizedData = scaler.fit_transform(flatArray)
+#scaler = StandardScaler()
+#standardizedData = scaler.fit_transform(flatArray)
 pca = PCA(n_components = 3)
 
 #pca.fit(flatArray)
