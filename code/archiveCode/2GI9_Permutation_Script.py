@@ -35,8 +35,8 @@ for index1 in (range(len(amino_acid))):
                 fourth_mutation = amino_acid[index4]
                 #outputs the current perm
                 #f.write(first_constant + first_mutation + second_mutation + third_mutation + second_constant + fourth_mutation + third_constant + "\n")
-                f.write(firstConstant + first_mutation + second_mutation + third_mutation + secondConstant + fourth_mutation + thirdConstant + "\n")
-
+                #f.write(firstConstant + first_mutation + second_mutation + third_mutation + secondConstant + fourth_mutation + thirdConstant + "\n")
+                f.write(first_mutation + second_mutation + third_mutation + fourth_mutation + "\n")
 f.close()
                 
    
