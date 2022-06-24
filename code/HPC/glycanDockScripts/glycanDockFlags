@@ -1,0 +1,16 @@
+# keep 
+# this is the command line use of glycandock
+# in actual running, the file location is called by a script and the flag file is referenced by the script 
+# ./GlycanDock.macosclangrelease 
+#
+-include_sugars
+-maintain_links
+-in:file:s target-prepacked.pdb
+-in:file:native crystal.pdb
+-cst_fa_file interface.cst
+-nstruct 50 
+-n_cycles 10 
+-ex1
+-ex2
+-docking:partners A_X 
+-out:pdb_gz
