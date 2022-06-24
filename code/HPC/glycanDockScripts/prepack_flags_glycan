@@ -3,7 +3,8 @@
 # actual prepacking in command-line flags
 # in actual running, the file location is called by a script and the flag file is referenced by the script 
 # need to link to project HPC file 
-./GlycanDock.macosclangrelease 
+#./GlycanDock.macosclangrelease 
+#
 -include_sugars
 -alternate_3_letter_codes pdb_sugar
 -auto_detect_glycan_connections
@@ -21,17 +22,3 @@
 
 
 
-
-# keep
-./GlycanDock.macosclangrelease 
--include_sugars
--maintain_links
--in:file:s target-prepacked.pdb
--in:file:native crystal.pdb
--cst_fa_file interface.cst
--nstruct 50 
--n_cycles 10 
--ex1
--ex2
--docking:partners A_X 
--out:pdb_gz
