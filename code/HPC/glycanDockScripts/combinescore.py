@@ -8,7 +8,7 @@ ts = time.time()
 
 
 # Variables
-opath = "/work/pvalle6/Protocol_guide/GlycanDock_refinement_output"        # Output file path
+opath = "/work/pvalle6/glycan_output"       # Output file path
 colns = ["total_score", \
          "I_sc", \
          "pep_sc", \
