@@ -1,11 +1,9 @@
 -include_sugars
 -alternate_3_letter_codes pdb_sugar
--auto_detect_glycan_connections
 -maintain_links
--cst_fa_file interface.cst
+#-cst_fa_file interface.cst ## this doesnt work lol
 -nstruct 50 
 -n_cycles 10 
 -ex1
 -ex2
 -docking:partners A_X 
--out:pdb_gz
