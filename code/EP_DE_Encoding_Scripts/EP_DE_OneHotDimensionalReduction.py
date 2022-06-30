@@ -7,9 +7,9 @@ from sklearn.decomposition import PCA
 
 #prevents sciNot from being used as output
 np.set_printoptions(suppress=True)
-input_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\OneHot149ThousandEncodings.npy"
+input_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\test\oneHotEncode.npy"
 #output_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\ReducedOneHot149.txt"
-output_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\HighDimensionalOneHot149.txt"
+output_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\test\oneHotReduced.csv"
 HighDimArray = np.load(input_file)
 
 #output files of binary data 
@@ -25,9 +25,11 @@ def TwoDeeReduction(x):
 
 reducedArray = TwoDeeReduction(HighDimArray)
 #print(reducedArray)
-#pca = PCA(n_components = 3)
+pca = PCA(n_components = 3)
 
 #printed_out_georgiev = pca.fit_transform(reducedArray)
+pca.fit(reducedArray)
+print(pca.explained_variance_)
 
 #np.savetxt(output_file, printed_out_georgiev, fmt = '%.18f', delimiter =',')
-np.savetxt(output_file, reducedArray, fmt = '%i', delimiter =',')
+#np.savetxt(output_file, reducedArray, fmt = '%i', delimiter =',')

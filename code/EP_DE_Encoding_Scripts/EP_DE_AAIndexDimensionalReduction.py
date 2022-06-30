@@ -7,8 +7,8 @@ from sklearn.decomposition import PCA
 
 #prevents sciNot from being used as output
 np.set_printoptions(suppress=True)
-input_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\georgievENCODE.npy"
-output_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\test\GEORGIEVREDUCEDOUTPUT_1.csv"
+input_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\test\georgievEnc.npy"
+output_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\test\GEORGIEVred.csv"
 #set these to: your 3d array numpy encoding; your location for a binaryOutput in numpy (optional), and your location for a raw Text OneHot output
 #input numpy unnormalized array with the onehot encodings
 #HighDimensionalOneHotFile = R"C:\Users\valle\OneDrive\Documents\Class Documents\Research\pythonScripts\georgiev_Save.npy"
@@ -37,8 +37,8 @@ flatArray = TwoDeeReduction(HighDimArray)
 pca = PCA(n_components = 3)
 
 #pca.fit(flatArray)
-#print(pca.explained_variance_)
+#print(pca.explained_variance_ratio_)
 printed_out_georgiev = pca.fit_transform(flatArray)
-print(printed_out_georgiev)
+#print(printed_out_georgiev)
 
 np.savetxt(output_file, printed_out_georgiev, fmt = '%.9f', delimiter =',')

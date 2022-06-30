@@ -4,8 +4,8 @@ import pathlib
 from pathlib import Path
 #file1 contains the n [200] sequences provided for the tests
 #last 4 characters contains the 4 positions 
-input_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\149Thousand_ID_Variant.txt"
-outputNumpy = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\OneHot149ThousandEncodings.npy"
+input_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\test\encodingINPUT.txt"
+output_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\test\oneHotEncode.npy"
 
 
 #all possible amino acids [0-19 index]
@@ -41,6 +41,11 @@ def generate_onehot():
 
 	return onehot_array
 #reduces 3d to 2d 
+def TwoDeeReduction(x):
+	# if len(x.shape) !=3:
+	# 	raise ValueError("Input must be 3D Array")
+	flat_length = np.prod(x.shape[1:])
+	return np.reshape(x,[len(x),flat_length])
 
-
-np.save(outputNumpy, generate_onehot())
+#np.savetxt(output_file, TwoDeeReduction(generate_onehot()), fmt = '%.f', delimiter =',')
+np.save(output_file, generate_onehot())
