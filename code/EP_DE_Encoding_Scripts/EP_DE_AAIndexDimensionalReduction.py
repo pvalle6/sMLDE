@@ -7,7 +7,7 @@ from sklearn.decomposition import PCA
 
 #prevents sciNot from being used as output
 np.set_printoptions(suppress=True)
-input_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\test\georgievEnc.npy"
+input_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\test\numpys\georgievEnc.npy"
 output_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\test\GEORGIEVred.csv"
 #set these to: your 3d array numpy encoding; your location for a binaryOutput in numpy (optional), and your location for a raw Text OneHot output
 #input numpy unnormalized array with the onehot encodings

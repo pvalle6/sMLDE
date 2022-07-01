@@ -18,8 +18,12 @@ thirdConstant = 'TE'
 #protein with permutations
 #TYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNxxxGEWTYDDATKTFTxTE
 
-amino_acid = ['A','R','N','D','C','Q','E','G','H','I','L','K',
-                             'M','F','P','S','T','W','Y','V']
+# ftMLDE index to Combo 
+amino_acid = ['A','C','D','E','F','G','H','I','K','L','M','N',
+                            'P','Q','R','S','T','V','W','Y']
+# original "traditional order"
+#amino_acid = ['A','R','N','D','C','Q','E','G','H','I','L','K',
+#                            'M','F','P','S','T','W','Y','V']
 
 #constants to build sequences with after permeations 
 

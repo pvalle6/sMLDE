@@ -5,12 +5,11 @@ from pathlib import Path
 #file1 contains the n [200] sequences provided for the tests
 #last 4 characters contains the 4 positions 
 input_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\test\encodingINPUT.txt"
-output_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\test\oneHotEncode.npy"
-
+output_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\test\numpys\oneHotEncode.npy"
+#output_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\test\oneHotEncode_.csv"
 
 #all possible amino acids [0-19 index]
-possible_amino_acid = ['A','R','N','D','C','Q','E','G','H','I','L','K',
-                             			'M','F','P','S','T','W','Y','V']
+possible_amino_acid = ['A','C','D','E','F','G','H','I','K','L','M','N','P','Q','R','S','T','V','W','Y']
 
 #reads file into list and cuts white space
 comboListGen = []
@@ -42,10 +41,10 @@ def generate_onehot():
 	return onehot_array
 #reduces 3d to 2d 
 def TwoDeeReduction(x):
-	# if len(x.shape) !=3:
-	# 	raise ValueError("Input must be 3D Array")
-	flat_length = np.prod(x.shape[1:])
-	return np.reshape(x,[len(x),flat_length])
+	#if len(x.shape) !=3:
+		#raise ValueError("Input must be 3D Array")
+ 	flat_length = np.prod(x.shape[1:])
+ 	return np.reshape(x,[len(x),flat_length])
 
 #np.savetxt(output_file, TwoDeeReduction(generate_onehot()), fmt = '%.f', delimiter =',')
 np.save(output_file, generate_onehot())
