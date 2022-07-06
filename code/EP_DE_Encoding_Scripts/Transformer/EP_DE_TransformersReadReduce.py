@@ -7,7 +7,7 @@ from sklearn.decomposition import PCA
 #numpy file to read into a array as a text to read 
 input_file = R"C:\Users\valle\OneDrive\Desktop\4Position Transformer Encoding\GB1_T2Q_transformer_Normalized.npy"
 #output_file = R"C:\Users\valle\OneDrive\Desktop\4Position Transformer Encoding\4Position Transformer Encoding\normal_tran_text.csv"
-outputPCAfile = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\transformerEncodings.csv"
+outputPCAfile = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\transformerEncodings_.csv"
 transformerText = np.load(input_file)
 
 def TwoDeeReduction(x):
