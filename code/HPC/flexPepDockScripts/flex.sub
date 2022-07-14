@@ -12,9 +12,9 @@
 # Variables
 export flexpepdock=/project/jjung1/packages/rosetta/main/source/bin/FlexPepDocking.default.linuxgccrelease
         # Path to FlexPepDocking
-export ipath=Prepacked_protein_peptide_complex
+export ipath=/ddnA/project/jjung1/pvalle6/Prepacked_protein_peptide_complex/
         # Path to folder that contains all input .pdb files  (Default: input)
-export opath=FlexPepDock_output
+export opath=/ddnA/project/jjung1/pvalle6/FlexPepDock_output/
         # Path to folder that put all output files  (Default: output)
 
 # Load GNU Parallel
