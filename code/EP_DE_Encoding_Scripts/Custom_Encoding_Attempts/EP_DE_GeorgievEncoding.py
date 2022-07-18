@@ -29,9 +29,9 @@ GEORGIEV_PARAMETERS = [gg_1, gg_2, gg_3, gg_4, gg_5, gg_6, gg_7, gg_8, gg_9,
 
 #file1 contains the n [200] sequences provided for the tests
 #last 4 characters contains the 4 positions 
-input_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\test\encodingINPUT.txt"
+input_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\updated_Encoding_Data\7_15_2022_Sequence_Combo.csv"
 #output_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\test\numpys\georgievEnc.npy"
-output_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\test\georgievHigh.csv"
+output_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\7_18_22_Custom_Georgiev.csv"
 #all possible amino acids [0-19 index]
 
 possible_amino_acid = ['A','C','D','E','F','G','H','I','K','L','M','N',
