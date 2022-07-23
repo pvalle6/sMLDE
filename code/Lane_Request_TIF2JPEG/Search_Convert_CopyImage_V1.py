@@ -1,12 +1,10 @@
 import os
 import shutil
-import disutils
-from disutils.dir_util import copy_tree
-import imagej
+import pyimagej
 
 # Peter Vallet, Jung Lab, 2022 
 # Search_Convert_CopyImage V1
-# Script 
+# Script to convert TIF2JPEGs
 # 1. Copies Parent Folder to renamed Parent Folder
 # 2. Recursively Searches and runs Image Conversion Macro on TIF
 # 3. Prints message Confirming Success
@@ -15,10 +13,10 @@ import imagej
 ij = imagej.init('sc.fiji:fiji')
 
 ## 		set this equal to parent folder of where you want to convert
-OG_parent_path = None #<<<<<<this one
+OG_parent_path = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\laneTestInput\tif_files" #<<<<<<this one
 ######################
 ## 		don't touch below
-new_parent_path = None
+new_parent_path = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\laneTestInput\jpep_files"
 ##		creates a list from the subdirectories in given parent
 ##		creates an empty list to iterate new path files into 
 OGsubdirectories = os.listdir(OG_parent_path)
@@ -28,9 +26,10 @@ newsubdirectories = []
 ##		does this by looping through original using x, y for copy creation
 for x, y in enumerate(subdirectories):
 	if not (os.path.isdir(OGsubdirectories[x])):
-		raise ValueError("Original Path Name does not Exist. Search_Convert_Copy")
+		raise ValueError("Original Path Name does not Exist. ~Search_Convert_Copy")
 	else:
-		newsubdirectories[y] = (new_parent_path + '_JPEG_converted')
+		#pretty sure that new_parent_path needs to be calling a list of changning subparents
+		newsubdirectories[y] = (new_parent_path + R'\_JPEG_converted')
 
 ## 		checks if a new folder exists, if not, makes it based on
 ## 					original folders name 
@@ -41,7 +40,7 @@ for x, y in enumerate(subdirectories):
 if not (os.path.isdir(new_parent_path)):
 	os.makedirs(new_parent_path)
 ## 		copies over file into renamed alternative folder
-copy_tree(OG_parent_path, new_parent_path)
+#copy_tree(OG_parent_path, new_parent_path)
 
 # IMPLEMENT OS.WALK TO SEARCH PARENT DIRECTORY 
 # AND CREATE A TUPLE WITH SUBDIRECTORIES
@@ -77,17 +76,19 @@ exit("Files succesfully saved!")
 # per directory that is being converted
 ##		Calls the changing path names and counts through folders
 ##				for success prompt
-count = 0
-args = {
-	'input': OGsubdirectories[count],
-	'output': new_parent_path,
-	'folderCount': count++
-}
+# count = 0
+# args = {
+# 	'input': OGsubdirectories[count],
+# 	'output': new_parent_path,
+# 	'folderCount': count++ 
+# }
+
+
 
 # NEED TO IMPLEMENT FUNCTION CALL FOR EVERY 
 # FOLDER IN DIRECTORY THAT NEEDS TO BE CONVERTED
 
-ij.py.run_macro(macro, args)
+#ij.py.run_macro(macro, args)
 
 
 
