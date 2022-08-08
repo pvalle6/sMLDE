@@ -1,0 +1,10 @@
+
+*.csv
+*.tif
+data/KENNY200_HIGH/200_input.txt
+data/Sequence Encodings for GB1/Round 1/EvMutation_Round_One.txt
+data/Sequence Encodings for GB1/Round 2/Round_Two_A/Round_Two_A.txt
+data/Sequence Encodings for GB1/Round 2/Round_Two_B/Round_Two_B.txt
+data/Sequence Encodings for GB1/Round 2/Round_Two_C/Round_Two_C.txt
+data/Sequence Encodings for GB1/Round 2/Round_Two_D/Round_Two_D.txt
+data/Sequence Encodings for GB1/Round 2/Round_Two_E/Round_Two_E.txt
