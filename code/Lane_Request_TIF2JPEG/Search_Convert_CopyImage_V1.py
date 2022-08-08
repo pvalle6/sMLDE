@@ -29,7 +29,7 @@ for x, y in enumerate(subdirectories):
 		raise ValueError("Original Path Name does not Exist. ~Search_Convert_Copy")
 	else:
 		#pretty sure that new_parent_path needs to be calling a list of changning subparents
-		newsubdirectories[y] = (new_parent_path + R'\_JPEG_converted')
+		newsubdirectories[y] = (x+ R'\_JPEG_converted')
 
 ## 		checks if a new folder exists, if not, makes it based on
 ## 					original folders name 
@@ -51,46 +51,36 @@ if not (os.path.isdir(new_parent_path)):
 ##					in a dictionary, calls new folder name the macro 
 ##					is then run on that folder, converting to JPEG
 ##					and then saving to a new folder
-macro = """ 
-#@input 
-#@output
-#@folderCount
-function action(input, output, filename) 
-{
-        open(input + filename);
-		//run("Brightness/Contrast...");
-		//run("Enhance Contrast", "saturated=0.35");
-        saveAs("Jpeg", output + filename);
-        close();
-}
-// runs the script to convert
-setBatchMode(true); 
-	list = getFileList(input);
-	for (i = 0; i < list.length; i++)
-action(input, output, list[i]);
-	setBatchMode(false);
 
-exit("Files succesfully saved!")
-"""
-# the dictionary values need to be changed
-# per directory that is being converted
-##		Calls the changing path names and counts through folders
-##				for success prompt
+# macro = """ 
+# #@input 
+# #@output
+# #@folderCount
+# function action(input, output, filename) 
+# {
+#         open(input + filename);
+#         saveAs("Jpeg", output + filename);
+#         close();
+# }
+# // runs the script to convert
+# setBatchMode(true); 
+# 	list = getFileList(input);
+# 	for (i = 0; i < list.length; i++)
+# action(input, output, list[i]);
+# 	setBatchMode(false);
+
+# exit("Files succesfully saved!")
+# """
 # count = 0
 # args = {
 # 	'input': OGsubdirectories[count],
-# 	'output': new_parent_path,
-# 	'folderCount': count++ 
+# 	'output': newsubdirectories[count],
+#  	'folderCount': count++ 
 # }
 
 
 
-# NEED TO IMPLEMENT FUNCTION CALL FOR EVERY 
-# FOLDER IN DIRECTORY THAT NEEDS TO BE CONVERTED
+# # NEED TO IMPLEMENT FUNCTION CALL FOR EVERY 
+# # FOLDER IN DIRECTORY THAT NEEDS TO BE CONVERTED
 
-#ij.py.run_macro(macro, args)
-
-
-
-
-
+# ij.py.run_macro(macro, args)

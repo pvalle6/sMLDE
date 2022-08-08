@@ -2,7 +2,7 @@ import pandas as pd
 import csv 
 
 # comboFile needs to have one column with each line being the list of comboinations in the desiresd order 
-comboFile = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\Sequence Encodings for GB1\Round 2\Round_Two_E\Round_Two_E.txt"
+comboFile = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\Sequence Encodings for GB1\Round 1\EvMutation_Round_One.txt"
 # put the msa_with combination file below 
 msa_test_library = R"C:\Users\valle\OneDrive\Desktop\WitmannData\msa_transformer_with_combo.csv"
 georgiev_test_library = R"C:\Users\valle\OneDrive\Desktop\WitmannData\georgiev.csv"
@@ -12,7 +12,7 @@ one_hot_library= R"C:\Users\valle\OneDrive\Desktop\WitmannData\onehot.csv"
 # msa out put
 
 #base path that will be added onto 
-base_destination = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\Sequence Encodings for GB1\Round 2\Round_Two_E\Round_Two_E"
+base_destination = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\Sequence Encodings for GB1\Round 1\EvMutation_Round_One"
 
 
 def filter_select_encodings(selection, library, Etype):

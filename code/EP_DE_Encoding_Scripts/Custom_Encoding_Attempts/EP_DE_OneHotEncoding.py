@@ -4,8 +4,8 @@ import pathlib
 from pathlib import Path
 #file1 contains the n [200] sequences provided for the tests
 #last 4 characters contains the 4 positions 
-input_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\updated_Encoding_Data\7_15_2022_Sequence_Combo.csv"
-output_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\7_18_22_Custom_OneHot.csv"
+input_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\Sequence Encodings for GB1\Round 1\EvMutation_Round_One.txt"
+output_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\Sequence Encodings for GB1\Round 1\EvMutation_Round_One_CUSTOMONEHOT.csv"
 #output_file = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\test\oneHotEncode_.csv"
 
 #all possible amino acids [0-19 index]
