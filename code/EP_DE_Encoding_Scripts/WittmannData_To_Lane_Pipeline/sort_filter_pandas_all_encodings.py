@@ -2,7 +2,7 @@ import pandas as pd
 import csv 
 
 # comboFile needs to have one column with each line being the list of comboinations in the desiresd order 
-comboFile = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\Sequence Encodings for GB1\Round 1\EvMutation_Round_One.txt"
+comboFile = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\Sequence Encodings for GB1\x1xx\x1xx Sequences.txt"
 # put the msa_with combination file below 
 msa_test_library = R"C:\Users\valle\OneDrive\Desktop\WitmannData\msa_transformer_with_combo.csv"
 georgiev_test_library = R"C:\Users\valle\OneDrive\Desktop\WitmannData\georgiev.csv"
@@ -12,7 +12,7 @@ one_hot_library= R"C:\Users\valle\OneDrive\Desktop\WitmannData\onehot.csv"
 # msa out put
 
 #base path that will be added onto 
-base_destination = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\Sequence Encodings for GB1\Round 1\EvMutation_Round_One"
+base_destination = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\Sequence Encodings for GB1\x1xx"
 
 
 def filter_select_encodings(selection, library, Etype):
@@ -27,10 +27,3 @@ filter_select_encodings(comboFile,msa_test_library,R'_MSA')
 filter_select_encodings(comboFile,georgiev_test_library,R'_Georgiev')
 filter_select_encodings(comboFile,one_hot_library,R'_ONEHOT')
 
-
-
-
-#might modify code to streamLine Creation of Encodings, as in: one file path destination and modify final name
-# need to have export to be csv 
-# need to have code functionalized and called multiple times. 
-# multiple libraries being called would also be nice 
