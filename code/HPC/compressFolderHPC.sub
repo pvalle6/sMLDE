@@ -1,0 +1,15 @@
+#!/bin/bash 
+#PBS -l nodes=1:ppn=20
+#PBS -l walltime=10:00
+#PBS -N compOutput
+#PBS -o compOutput.o
+#PBS -e compOutput.e 
+#PBS -q workq
+#PBS -A hpc_mlde_gb1
+#PBS -m e
+#PBS -M pvalle6@lsu.edu
+
+
+cd /work/pvalle6/
+tar czf compressed_flex.tgz /work/pvalle6/out_flex/*
+date
