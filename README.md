@@ -1,5 +1,4 @@
 # EP-DE_GB1
-
 - Code contains all scripts for the encoding and dimensional reduction for inputs into ML.
 	* HPC 
 		* contains working scripts to run zeroShot on HPC
@@ -8,8 +7,5 @@
 	* EP_DE_Encoding_Scripts
 		* Contains scripts for analyzing Wittmann Data and pulling encodings appropriately 
 		* Contains depreciated scripts previously used for custom encoding method 
-	* Glycowork
-		* Contains notebook for running LectinOracle Prediction
-	* Lane script contains inprogress script for FIJI
 	* Archive Scripts contain scripts from earlier in project including 160k permutation calculator
 - Data contains files and output of files referenced by the script
