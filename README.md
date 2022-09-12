@@ -1,4 +1,4 @@
-# EP-DE
+# EP-DE_GB1
 
 - Code contains all scripts for the encoding and dimensional reduction for inputs into ML.
 	* HPC 
