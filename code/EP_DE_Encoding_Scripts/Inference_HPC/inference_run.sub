@@ -1,0 +1,16 @@
+#!/bin/bash 
+#PBS -l nodes=1:ppn=8
+#PBS -l walltime=1:00:00
+#PBS -N infer
+#PBS -o infer.o
+#PBS -e infer.e 
+#PBS -q single
+#PBS -A hpc_mlde_gb1
+#PBS -m e
+#PBS -M pvalle6@lsu.edu
+
+#
+python /home/pvalle6/inference.py
+
+
+##
