@@ -31,7 +31,7 @@ ifiles=(`cd $ipath; find . -name 'ranked_0.pdb' | sed -e 's|^./||g' -e  's|/rank
 # Process AlphaFold results
 #need to change this lol
 parallel --workdir $PBS_O_WORKDIR -j$ppn \
-         "sed -e 's|INPUT|$ipath/{}/ranked_0.pdb|g' -e 's|OUTPUT|$opath/{}.pdb|g' script.pml | pymol -cpq" ::: ${ifiles[@]}
+         "sed -e 's|INPUT|$ipath/{}/ranked_0.pdb|g' -e 's|OUTPUT|$opath/{}.pdb|g' rmsd.pml | pymol -cpq" ::: ${ifiles[@]}
          
 # Deactivate pymol environment
 conda deactivate
