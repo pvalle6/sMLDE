@@ -1,3 +1,5 @@
+# PREVIOUS WORK IN PROGRESS SCRIPT USED TO FORMAT ENCODINGS
+# NOT USED ANYMORE, USE sort_filter_pandas_all_encodings.py INSTEAD
 import pandas as pd 
 import csv 
 
