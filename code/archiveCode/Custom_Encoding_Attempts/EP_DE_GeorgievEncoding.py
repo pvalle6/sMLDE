@@ -1,3 +1,6 @@
+# NOT USED, WAS EARLY ATTEMPT AT GEORGIEV ENCODING
+
+
 import numpy as np
 # This section of code is copied from ProFET (Ofer & Linial, DOI: 10.1093/bioinformatics/btv345)
 # Original comment by the ProFET authors: 'Acquired from georgiev's paper of

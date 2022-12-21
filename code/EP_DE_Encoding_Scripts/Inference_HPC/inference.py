@@ -1,3 +1,6 @@
+# SCRIPT USED ON HPC DUE TO LARGE RESOURCES REQUIRED, NEEDS TO BE OPTIMIZED
+# RAN USING inference_run.sub ON HPC
+
 import pandas as pd 
 import csv 
 

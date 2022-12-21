@@ -26,7 +26,7 @@ module load gnuparallel/20190222/intel-19.0.5
 cd $PBS_O_WORKDIR
 
 # Create a list of input files
-ifiles=(`cd $ipath; find . -name 'ranked_0.pdb' | sed -e 's|^./||g' -e  's|/ranked_0.pdb||g'`)
+ifiles=(`cd $ipath; find . -name 'ranked_0.pdb'| sed -e 's|^./||g' -e  's|/ranked_0.pdb||g'`)
 
 # Process AlphaFold results
 #need to change this lol

@@ -1,3 +1,4 @@
+# CONVERTED NUMPY FILES TO CSV FILS
 import numpy as np
 
 input_file = R"C:\Users\valle\Downloads\MldeData\SimulationTrainingData\Encodings\msa_transformer.npy"

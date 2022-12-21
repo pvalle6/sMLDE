@@ -1,3 +1,5 @@
+#NOT USED, EARLY ATTEMPT AT DIMENSIONAL REDUCTION OF ENCODINGS
+
 import numpy as np
 from sklearn import datasets
 from sklearn import preprocessing

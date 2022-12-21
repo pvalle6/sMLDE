@@ -1,11 +1,13 @@
 # Structure-informed MLDE for GB1
-- Code contains all scripts for the encoding and dimensional reduction for inputs into ML.
+- Code contains all scripts
 	* HPC 
-		* contains working scripts to run zero-shot on LSU HPC
-		* contains unworking/untested scripts for GlycanDock use on LSU HPC 
-		* contains original working scripts for FlexPepDockUse
-	* MLDE_Encoding_Scripts
-		* Contains scripts for analyzing Cell Syst 2021 (Wittmann et al.) data  and pulling encodings appropriately 
-		* Contains depreciated scripts previously used for custom encoding method 
-	* Archive scripts contain scripts from earlier in project including 160k permutation calculator
-- Data contains files and output of files referenced by the script
+		* Contains working scripts to run zeroShot on HPC
+		* Contains unworking/untested scripts for glycanDock use on HPC 
+		* Contains original working scripts for FlexPepDockUse
+		* Partially Written by Peter Vallet and HPC Staff
+	* EP_DE_Encoding_Scripts
+		* Contains scripts for analyzing Wittmann Data and pulling encodings appropriately for Training and Testing Models 
+		* Primarily written by Peter Vallet
+	* Archive Scripts contain scripts and not used in the final GB1 Project
+- Data (DELETED)
+

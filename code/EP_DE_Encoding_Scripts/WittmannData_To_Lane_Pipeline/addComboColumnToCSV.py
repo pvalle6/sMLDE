@@ -1,3 +1,4 @@
+# SCRIPT USED TO ADD COMBO COLUMN TO CSV
 import csv
 import pandas as pd 
 inputfile = R"C:\Users\valle\OneDrive\Desktop\WitmannData\msa_transformer.csv"
@@ -6,7 +7,7 @@ comboFile = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\test\tests_encodings\
 
 
 # takes in the msa transformer csv given in the wittman caltech data, adds in the combo in the left column
-#    allowing for sorting in the by sort_filter_pandas 
+#    allowing for sorting in the by sort_filter_pandas.py
 comboLibrary = pd.read_csv(comboFile, names = ['combo'])
 df = pd.read_csv(inputfile, header = None, index_col=0)
 #

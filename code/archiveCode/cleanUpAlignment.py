@@ -1,3 +1,8 @@
+# EARLY SCRIPT USED TO GET ALIGNMENT OF GB1
+# MARK FOR DELETE
+# NOT USED
+
+
 import sys
 import re
 

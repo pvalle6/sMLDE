@@ -1,3 +1,4 @@
+# SCRIPT USED TO CONVERT PICKLE FILE TO CSV FILE
 import pickle as pkl
 import pandas as pd
 import pandas as pd 

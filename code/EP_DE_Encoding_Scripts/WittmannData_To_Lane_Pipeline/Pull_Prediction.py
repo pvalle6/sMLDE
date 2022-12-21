@@ -1,7 +1,8 @@
+# SCRIPT PRINTS OUT PREDICTION SCORES FOR PROTEIN SEQUENCES REQUESTED
 import pandas as pd 
 import csv 
 
-# comboFile needs to have one column with each line being the list of comboinations in the desiresd order 
+# comboFile needs to have one column with each line being the list of comboinations in the desired order 
 pull = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\pull_pred_test\Open_Github_Task_Files\x6Mx_req.csv"
 # put the msa_with combination file below 
 preds = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\pull_pred_test\Open_Github_Task_Files\fitness_scores.csv"
