@@ -1,4 +1,4 @@
-# EP-DE_GB1
+# Structure-informed MLDE for GB1
 - Code contains all scripts
 	* HPC 
 		* Contains working scripts to run zeroShot on HPC
