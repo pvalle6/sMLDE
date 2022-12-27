@@ -1,31 +1,34 @@
-import pandas as pd 
-import csv 
+"""Needed to run script inference_remove_rehead
+through HPC because of the slow nature of searching
+the massive data for specific sequences"""
+import pandas as pd
+
+MSA_LIB = None  # msa_transformer_with_combo.csv
+TRAIN_ONE = None
+TRAIN_TWO = None
+
+OUT_ONE = None
+OUT_TWO = None
 
 
-msa_library = "/ddnA/project/jjung1/pvalle6/msa_transformer_with_combo.csv"
-#msa_test_library1 = (R"C:\Users\valle\OneDrive\Documents\EP-DE\data\inferenceRemoval\test_db.csv")
-training_combo_1 = "/ddnA/project/jjung1/pvalle6/inference_list/x4Mx_R2_Training_List.txt"
-training_combo_2 = "/ddnA/project/jjung1/pvalle6/inference_list/x6Mx_R2_Training_List.txt"
-#training_combo1 = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\inferenceRemoval\test_removal.txt"
-#output_ = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\inferenceRemoval\msa_database_without_training_with_proper_heading.csv"
-output_1 = "/ddnA/project/jjung1/pvalle6/inference_list/x4Mx_R2_out.txt"
-output_2 = "/ddnA/project/jjung1/pvalle6/inference_list/x6Mx_R2_out.txt"
+def remove_train_rehead(library, train_seq, output_file):
+    """function called to rehead"""
+    dataframe = pd.read_csv(library, header=None)
+    dataframe = dataframe.set_index([0])
+    with open(train_seq) as file:
+        for line in file:
+            dataframe.drop(line.strip(), inplace=True)
+    dataframe = dataframe.reset_index()
+    column_names = []
+    # need to change to iterrows for more efficient run
+    # for column,k in (enumerate(dataframe)):
+    for k in enumerate(dataframe):
+        column_names.append(f"msa{k}")
+    column_names[0] = 'id'
+    dataframe.columns = column_names
+    print(dataframe.head())
+    dataframe.to_csv(output_file, index=False)
 
-def removeTrainAndAddHead(library, trainSeq, outputfile):
-	df = pd.read_csv(library, header = None)
-	df = df.set_index([0])	
-	with open(trainSeq) as file:
-		for line in file:
-			df.drop(line.strip(), inplace=True)
-	df = df.reset_index()
-	columnNames= []
-	#need to change to iterrows for more efficient run
-	for column,k in (enumerate(df)):
-		columnNames.append(f"msa{k}")
-	columnNames[0] = 'id'
-	df.columns = columnNames
-	print(df.head())
-	df.to_csv(outputfile, index = False)
 
-removeTrainAndAddHead(msa_library, training_combo_1, output_1)
-removeTrainAndAddHead(msa_library, training_combo_2, output_2)
+remove_train_rehead(MSA_LIB, TRAIN_ONE, OUT_ONE)
+remove_train_rehead(MSA_LIB, TRAIN_TWO, OUT_TWO)
