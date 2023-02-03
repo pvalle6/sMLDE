@@ -1,22 +1,20 @@
-# SCRIPT PRINTS OUT PREDICTION SCORES FOR PROTEIN SEQUENCES REQUESTED
-import pandas as pd 
-import csv 
+"""Provides fitness scores"""
+import pandas as pd
 
-# comboFile needs to have one column with each line being the list of comboinations in the desired order 
-pull = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\pull_pred_test\Open_Github_Task_Files\x6Mx_req.csv"
-# put the msa_with combination file below 
-preds = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\pull_pred_test\Open_Github_Task_Files\fitness_scores.csv"
-
-outfile = R"C:\Users\valle\OneDrive\Documents\EP-DE\data\pull_pred_test\Open_Github_Task_Files\x6Mx_preds.csv"
-
-def pull_preds(selection, predictions):
-	comboListDF = pd.read_csv(selection, names = ['combo'])
-	df = pd.read_csv(predictions, header = None)
-	df = df.set_index([0])
-	df = df.reindex(index=comboListDF['combo'])
-	print(df.head())
-	df.to_csv(outfile, header=False)
-
-pull_preds(pull, preds)
+PULL = None
+# put the msa_with combination file below
+PREDS = None
+OUT = None
 
 
+def pull_preds(selection, predictions, output_file):
+    """Outputs a csv of selected fitness prediction scores from csv file with prediction scores"""
+    combo_list = pd.read_csv(selection, names=['combo'])
+    dataframe = pd.read_csv(predictions, header=None)
+    dataframe = dataframe.set_index([0])
+    dataframe = dataframe.reindex(index=combo_list['combo'])
+    print(dataframe.head())
+    dataframe.to_csv(output_file, header=False)
+
+
+pull_preds(PULL, PREDS, OUT)
