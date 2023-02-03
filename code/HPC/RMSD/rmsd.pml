@@ -1,10 +1,9 @@
-load 1pga.pdb #[file path to reference GB1 mutant]
-load INPUT, id_
-# align 1pga.pdb, id_
+load 1pga.pdb
+load INPUT, PETER
 
-output = cmd.align(id_, 1pga.pdb)
+output = align(1pga,PETER)
 python
-with open("rmsd_out.txt", "w") as f:
+with open("rmsd_out.txt", "a") as f:
    f.write(output)
 f.close()
 python end
