@@ -9,8 +9,8 @@ def pickle_to_csv(import):
 
     Returns to console
     """
-    df2 = pd.read_pickle(import)
-    for key, value in df2.items():
+    df = pd.read_pickle(import)
+    for key, value in df.items():
         print(key)
 
 def filter_select_encodings(selection, library, e_type):
