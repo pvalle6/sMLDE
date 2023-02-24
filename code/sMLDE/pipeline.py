@@ -52,6 +52,21 @@ def remove_train_rehead(library, train_seq):
     dataframe.columns = column_names
     print(dataframe.head())
     return dataframe
+def pull_preds(selection, predictions):
+    """
+    Outputs a csv of selected fitness prediction scores from csv file with prediction scores
+    selection: CSV of sequences
+    predictions: CSV of predictions from model
+    """
+    combo_list = pd.read_csv(selection, names=['combo'])
+    dataframe = pd.read_csv(predictions, header=None)
+    dataframe = dataframe.set_index([0])
+    dataframe = dataframe.reindex(index=combo_list['combo'])
+    print(dataframe.head())
+    return dataframe
+
+
+
 
 
 remove_train_rehead(MSALIBRARY, TRAININGCOMBO, OUTPUT)
