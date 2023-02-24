@@ -18,16 +18,12 @@ def filter_select_encodings(selection, library, e_type):
     library: selected encoding library
     Returns Pandas Dataframe
     """
-    combo_list_dataframe = pd.read_csv(selection, names = ['combo'])
+    combo_list_df = pd.read_csv(selection, names = ['combo'])
     df = pd.read_csv(library, header = None)
     df = df.set_index([0])
-    df = df.reindex(index=combo_list_dataframe['combo'])
+    df = df.reindex(index=combo_list_df['combo'])
     print(df.head())
     return df
-# filter_select_encodings(COMBO,GEORGIEV,R'_Georgiev')
-# #filter_select_encodings(COMBO,ONEHOT,R'_ONEHOT')
-
-
 
 def remove_train_rehead(library, train_seq):
     """
@@ -37,21 +33,22 @@ def remove_train_rehead(library, train_seq):
 
     Returns Pandas Dataframe
     """
-    dataframe = pd.read_csv(library, header=None)
-    dataframe = dataframe.set_index([0])
+    df = pd.read_csv(library, header=None)
+    df = df.set_index([0])
     with open(train_seq) as file:
         for line in file:
-            dataframe.drop(line.strip(), inplace=True)
-            dataframe = dataframe.reset_index()
+            df.drop(line.strip(), inplace=True)
+            df = df.reset_index()
     column_names = []
     # using iterrows may be more efficient
-    # #for column,k in enumerate(dataframe):
-    for k in enumerate(dataframe):
+    # #for column,k in enumerate(df):
+    for k in enumerate(df):
         column_names.append(f"msa{k}")
     column_names[0] = 'id'
-    dataframe.columns = column_names
-    print(dataframe.head())
-    return dataframe
+    df.columns = column_names
+    print(df.head())
+    return df
+
 def pull_preds(selection, predictions):
     """
     Outputs a csv of selected fitness prediction scores from csv file with prediction scores
@@ -59,17 +56,11 @@ def pull_preds(selection, predictions):
     predictions: CSV of predictions from model
     """
     combo_list = pd.read_csv(selection, names=['combo'])
-    dataframe = pd.read_csv(predictions, header=None)
-    dataframe = dataframe.set_index([0])
-    dataframe = dataframe.reindex(index=combo_list['combo'])
-    print(dataframe.head())
-    return dataframe
-
-
-
-
-
-remove_train_rehead(MSALIBRARY, TRAININGCOMBO, OUTPUT)
+    df = pd.read_csv(predictions, header=None)
+    df = df.set_index([0])
+    df = df.reindex(index=combo_list['combo'])
+    print(df.head())
+    return df
 
 def add_combo_column_to_csv(INPUTFILE, COMBOFILE):
     """
@@ -98,18 +89,18 @@ def remove_train_rehead(library, train_seq):
     train_seq: CSV file of sequences for training model
     """
 
-    dataframe = pd.read_csv(library, header=None)
-    dataframe = dataframe.set_index([0])
+    df = pd.read_csv(library, header=None)
+    df = df.set_index([0])
     with open(train_seq) as file:
         for line in file:
-            dataframe.drop(line.strip(), inplace=True)
-    dataframe = dataframe.reset_index()
+            df.drop(line.strip(), inplace=True)
+    df = df.reset_index()
     column_names = []
     # need to change to iterrows for more efficient run
-    # for column,k in (enumerate(dataframe)):
-    for k in enumerate(dataframe):
+    # for column,k in (enumerate(df)):
+    for k in enumerate(df):
         column_names.append(f"msa{k}")
     column_names[0] = 'id'
-    dataframe.columns = column_names
-    print(dataframe.head())
-    return dataframe
+    df.columns = column_names
+    print(df.head())
+    return df
