@@ -10,4 +10,12 @@ data/Sequence Encodings for GB1/Round 2/Round_Two_E/Round_Two_E.txt
 *.npy
 *.txt
 .rtf
+<<<<<<< HEAD
 *.xml
+=======
+*.iml
+.github/.idea/inspectionProfiles/profiles_settings.xml
+.github/.idea/misc.xml
+.github/.idea/modules.xml
+.github/.idea/workspace.xml
+>>>>>>> 396116b6eb41c3021dae261e76d33ce23d604e80
