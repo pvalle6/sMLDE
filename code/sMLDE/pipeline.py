@@ -1,25 +1,27 @@
 """Library for use in sMLDE"""
 import pandas as pd
-import numpy as np
+from pandas import DataFrame
 
-def pickle_to_csv(import):
+
+def pickle_to_csv(import_file):
     """reads in the pickle file to a csv
     to be used in add combo column
     IMPORT: pickle file to csv
 
     Returns to console
     """
-    df = pd.read_pickle(import)
+    df = pd.read_pickle(import_file)
     for key, value in df.items():
         print(key)
 
-def filter_select_encodings(selection, library, e_type):
+def filter_select_encodings(selection, library) -> DataFrame:
     """pulls encodings from Wittmann data
     Selection: list of encodings
     library: selected encoding library
     Returns Pandas Dataframe
     """
-    combo_list_df = pd.read_csv(selection, names = ['combo'])
+
+    combo_list_df = pd.read_csv(selection, names=['combo'])
     df = pd.read_csv(library, header = None)
     df = df.set_index([0])
     df = df.reindex(index=combo_list_df['combo'])
