@@ -1,5 +1,6 @@
 """Library for use in sMLDE"""
 import pandas as pd
+import numpy as np
 
 def pickle_to_csv(import):
     """reads in the pickle file to a csv
@@ -8,7 +9,7 @@ def pickle_to_csv(import):
 
     Returns to console
     """
-    df2 = pd.read_pickle(IMPORT)
+    df2 = pd.read_pickle(import)
     for key, value in df2.items():
         print(key)
 
