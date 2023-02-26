@@ -1,11 +1,7 @@
-"""Script used in previous testing for dimensional reduction"""
+"""Script converts numpy file to txt file"""
 import numpy as np
-INPUT= None #msa_transformer.npy"
-OUTPUT = None #msa_transformer.csv
-def dim_reduction(x):
-	"""Function used in previous testing for dimensional reduction"""
-	flat_length = np.prod(x.shape[1:])
-	return np.reshape(x,[len(x),flat_length])
+INPUT= R"B:\HardDrive_Files\Wittmann Data\MldeData\SimulationTrainingData\Fitness.npy" #msa_transformer.npy"
+OUTPUT = R"B:\HardDrive_Files\Wittmann Data\MldeData\SimulationTrainingData\Fitness.txt" #msa_transformer.csv
 three_dim = np.load(INPUT)
-output_numpy = dim_reduction(three_dim)
-np.savetxt(OUTPUT, output_numpy, fmt = '%f', delimiter =',')
+print(three_dim)
+np.savetxt(OUTPUT, three_dim, fmt = '%f', delimiter =',')
