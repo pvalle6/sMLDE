@@ -21,8 +21,9 @@ def filter_select_encodings(selection, library) -> DataFrame:
     """Pulls encodings from Wittmann data
 
     Keyword arguments:
-    Selection: list of encodings
+    selection: list of encodings
     library: selected encoding library
+
     Returns Pandas Dataframe
     """
 
@@ -50,22 +51,23 @@ def pull_preds(selection, predictions):
     return df
 
 
-def add_combo_column_to_csv(inputfile, combofile):
+def add_combo_column_to_csv(input_file, combo_file):
     """Script that reads in the Encodings from
     the Wittman Dataset and adds the pickle file
-    with the Combinations"""
-    """ 
-    takes in the msa transformer csv given in the Wittman Caltech data,
-    adds in the combo in the left column
-    allowing for sorting in the by sort_filter_pandas 
-    inputfile: Big Wittman transformer
-    combofile: Combinations from the pickle file
+    with the Combinations
+
+    Takes in the msa transformer csv given in the
+        Wittman Caltech data,
+        adds in the combo in the left column
+        allowing for sorting in the by sort_filter_pandas
+    input_file: big wittman transformer
+    combo_file: Combinations from the pickle file
     
     Returns Pandas DF 
     """
 
-    comboLibrary = pd.read_csv(combofile, names=['combo'])
-    df = pd.read_csv(inputfile, header=None, index_col=0)
+    comboLibrary = pd.read_csv(input_file, names=['combo'])
+    df = pd.read_csv(input_file, header=None, index_col=0)
     df_merge = pd.concat([comboLibrary.reset_index(drop=True), df.reset_index(drop=False)], axis=1)
     print(df_merge.head())
     return df
