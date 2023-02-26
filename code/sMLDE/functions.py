@@ -1,5 +1,6 @@
 """Library for use in smlde"""
 import pandas as pd
+import numpy as np
 from pandas import DataFrame
 
 
@@ -71,6 +72,11 @@ def add_combo_column_to_csv(input_file, combo_file):
     df_merge = pd.concat([comboLibrary.reset_index(drop=True), df.reset_index(drop=False)], axis=1)
     print(df_merge.head())
     return df
+
+def read_np(import)
+    """Reads numpy and prints out"""
+    three_dim = np.load(import)
+    print(three_dim)
 
 
 def remove_train_rehead(library, train_seq):
