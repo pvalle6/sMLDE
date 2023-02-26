@@ -9,7 +9,7 @@ OUTPUT = None
 
 
 def remove_train_rehead(library, train_seq, output_file):
-    """function called to rehead"""
+    """function called to remove training sequences"""
     dataframe = pd.read_csv(library, header=None)
     dataframe = dataframe.set_index([0])
     with open(train_seq) as file:

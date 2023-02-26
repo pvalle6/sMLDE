@@ -1,11 +1,11 @@
-"""finds the encodings for chosen sequences"""
+"""Finds the encodings for chosen sequences"""
 import pandas as pd
 
 COMBO = None
 # put the msa_with combination file below
 MSA = None
-GEORGIEV = None
-ONEHOT= None
+# GEORGIEV = None
+# ONEHOT= None
 
 
 #base path that will be added onto
@@ -21,5 +21,5 @@ def filter_select_encodings(selection, library, e_type):
     dataframe.to_csv(BASE_DESTINATION+e_type+R'.csv',  header=False)
 
 filter_select_encodings(COMBO,MSA,R'_MSA')
-#filter_select_encodings(COMBO,GEORGIEV,R'_Georgiev')
+# filter_select_encodings(COMBO,GEORGIEV,R'_Georgiev')
 # #filter_select_encodings(COMBO,ONEHOT,R'_ONEHOT')

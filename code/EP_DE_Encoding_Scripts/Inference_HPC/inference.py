@@ -20,8 +20,7 @@ def remove_train_rehead(library, train_seq, output_file):
             dataframe.drop(line.strip(), inplace=True)
     dataframe = dataframe.reset_index()
     column_names = []
-    # need to change to iterrows for more efficient run
-    # for column,k in (enumerate(dataframe)):
+
     for k in enumerate(dataframe):
         column_names.append(f"msa{k}")
     column_names[0] = 'id'

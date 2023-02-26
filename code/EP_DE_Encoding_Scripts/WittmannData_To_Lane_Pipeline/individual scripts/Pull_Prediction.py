@@ -1,10 +1,10 @@
 """Provides fitness scores"""
 import pandas as pd
 
-PULL = None
-# put the msa_with combination file below
-PREDS = None
-OUT = None
+PULL = R"C:\Users\valle\OneDrive\Desktop\seq_req.csv"
+# put the msa_with combination file below <- Actually, I think its a different file
+PREDS = R"C:\Users\valle\OneDrive\Desktop\WitmannData\msa_transformer_with_combo.csv"
+OUT = R"C:\Users\valle\OneDrive\Desktop\seq_req_75.csv"
 
 
 def pull_preds(selection, predictions, output_file):
