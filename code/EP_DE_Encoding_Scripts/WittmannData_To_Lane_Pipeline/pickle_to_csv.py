@@ -1,7 +1,7 @@
 """reads in the pickle file to a csv
 to be used in add combo column"""
 import pandas as pd
-IMPORT = None #pickle file to csv
+IMPORT = R"B:\HardDrive_Files\Wittmann Data\MldeData\SimulationTrainingData\FilteredComboToInd.pkl" #pickle file to csv
 EXPORT = None #encodings
 df2 = pd.read_pickle(IMPORT)
 for key, value in df2.items():
