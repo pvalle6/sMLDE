@@ -2,8 +2,7 @@
 import pandas as pd
 
 COMBO = None
-# put the msa_with combination file below
-MSA = None
+MSA = None # put the msa_with combination file below
 # GEORGIEV = None
 # ONEHOT= None
 
