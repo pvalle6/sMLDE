@@ -8,9 +8,9 @@
 #PBS -A hpc_mlde_gb1
 
 # Define variables
-ipath=/ddnA/project/jjung1/pvalle6/workspace/
+ipath= #
         # Path to folder that contains all results from AlphaFold (Default: input)
-opath=/ddnA/project/jjung1/pvalle6/Protein_peptide_complex/
+opath= #
         # Path to folder that put all output files  (Default: output)
 ppn=20
         # Number of processes per node  (Default: 20)

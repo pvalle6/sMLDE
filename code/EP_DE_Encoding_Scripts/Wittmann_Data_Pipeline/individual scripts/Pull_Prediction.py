@@ -1,9 +1,12 @@
 """Provides fitness scores"""
 import pandas as pd
 
-PULL = R"C:\Users\valle\OneDrive\Desktop\seq_req.csv"
-PREDS = R"C:\Users\valle\OneDrive\Desktop\WitmannData\Encodings\Fitness.csv"
-OUT = R"C:\Users\valle\OneDrive\Desktop\seq_req_75.csv"
+PULL = None
+#seq_req.csv"
+PREDS = None
+#"Fitness.csv"
+OUT = None
+# "seq_req_75.csv"
 
 
 def pull_preds(selection, predictions, output_file):
