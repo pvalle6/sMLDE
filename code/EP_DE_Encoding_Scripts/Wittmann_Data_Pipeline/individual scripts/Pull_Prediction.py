@@ -2,8 +2,7 @@
 import pandas as pd
 
 PULL = R"C:\Users\valle\OneDrive\Desktop\seq_req.csv"
-# put the msa_with combination file below <- Actually, I think its a different file
-PREDS = R"C:\Users\valle\OneDrive\Desktop\WitmannData\msa_transformer_with_combo.csv"
+PREDS = R"C:\Users\valle\OneDrive\Desktop\WitmannData\Encodings\Fitness.csv"
 OUT = R"C:\Users\valle\OneDrive\Desktop\seq_req_75.csv"
 
 
