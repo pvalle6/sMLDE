@@ -8,7 +8,3 @@
 	* EP_DE_Encoding_Scripts
 		* Contains scripts for analyzing Wittmann Data and pulling encodings appropriately for Training and Testing Models 
 		* Primarily written by Peter Vallet
-		
-	* sMLDE 
-		* New Python Package for simplying pipeline 
-	* Archive Scripts contain scripts and not used in the final GB1 Project
