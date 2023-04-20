@@ -1,4 +1,5 @@
 # Structure-informed MLDE for GB1
+
 - Code contains all scripts
 	* HPC 
 		* Contains working scripts to run zeroShot on HPC
@@ -8,6 +9,3 @@
 	* EP_DE_Encoding_Scripts
 		* Contains scripts for analyzing Wittmann Data and pulling encodings appropriately for Training and Testing Models 
 		* Primarily written by Peter Vallet
-	* Archive Scripts contain scripts and not used in the final GB1 Project
-- Data (DELETED)
-
