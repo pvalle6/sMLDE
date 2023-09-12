@@ -5,11 +5,11 @@
 #PBS -o flex.o
 #PBS -e flex.e 
 #PBS -q workq
-#PBS -A hpc_hpcadmin8
+#PBS -A 
 
 # Define variables
-#flexpepdock=/work/jasonli3/packages/rosetta_src_2019.35.60890_bundle/main/source/bin/FlexPepDocking.default.linuxgccrelease
-flexpepdock=/work/jasonli3/packages/rosetta_src_2021.16.61629_bundle/main/source/bin/FlexPepDocking.default.linuxgccrelease
+
+flexpepdock=
         # Path to FlexPepDocking
 ipath=input1
         # Path to folder that contains all input .pdb files  (Default: input)
