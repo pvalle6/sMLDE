@@ -5,11 +5,11 @@
 #PBS -o compOutput.o
 #PBS -e compOutput.e 
 #PBS -q workq
-#PBS -A hpc_mlde_gb1
+#PBS -A 
 #PBS -m e
-#PBS -M pvalle6@lsu.edu
+#PBS -M 
 
 
-cd /work/pvalle6/
-tar czf compressed_flex.tgz /work/pvalle6/out_flex/*
+cd /workfolder/
+tar czf compressed_flex.tgz /filename/
 date

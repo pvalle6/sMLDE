@@ -5,12 +5,12 @@
 #PBS -o RMSD.o
 #PBS -e RMSD.e 
 #PBS -q workq
-#PBS -A hpc_mlde_gb1
+#PBS -A 
 
 # Define variables
-ipath=/home/pvalle6/rmsd_in
+ipath=input
         # Path to folder that contains all results from AlphaFold (Default: input)
-opath=/home/pvalle6/rmsd_out
+opath=output
         # Path to folder that put all output files  (Default: output)
 ppn=20
         # Number of processes per node  (Default: 20)
