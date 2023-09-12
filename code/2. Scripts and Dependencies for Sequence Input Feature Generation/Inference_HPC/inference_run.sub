@@ -7,10 +7,10 @@
 #PBS -q single
 #PBS -A hpc_mlde_gb1
 #PBS -m e
-#PBS -M pvalle6@lsu.edu
+#PBS -M 
 
 #
-python /home/pvalle6/inference.py
+python /inferencefile/
 
 
 ##
