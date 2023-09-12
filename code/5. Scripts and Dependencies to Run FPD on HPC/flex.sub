@@ -5,16 +5,16 @@
 #PBS -o flex.o
 #PBS -e flex.e 
 #PBS -q workq
-#PBS -A hpc_mlde_gb1
+#PBS -A 
 #PBS -m e
-#PBS -M kngu177@lsu.edu
+#PBS -M 
 
 # Variables
-export flexpepdock=/project/jjung1/packages/rosetta/main/source/bin/FlexPepDocking.default.linuxgccrelease
+export flexpepdock=/ddnA/ 
         # Path to FlexPepDocking
-export ipath=/ddnA/project/jjung1/pvalle6/Prepacked_protein_peptide_complex/
+export ipath= /ddnA/
         # Path to folder that contains all input .pdb files  (Default: input)
-export opath=/ddnA/project/jjung1/pvalle6/FlexPepDock_output/
+export opath= /ddnA/
         # Path to folder that put all output files  (Default: output)
 
 # Load GNU Parallel
